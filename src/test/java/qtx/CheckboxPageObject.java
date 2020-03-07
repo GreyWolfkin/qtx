@@ -53,3 +53,5 @@ public class CheckboxPageObject extends PageObjectSuperClass {
 		return false;
 	}
 }
+
+// Adding something unnecessary
