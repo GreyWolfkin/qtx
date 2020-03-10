@@ -3,7 +3,7 @@ package qtx;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class MasterTest extends TestSuperClass{
+public class MasterTest extends TestSuperClass {
 
 	@Test(priority=1)
 	public void canLogin() {
@@ -53,6 +53,18 @@ public class MasterTest extends TestSuperClass{
 		float expectedResult = 5;
 		
 		Assert.assertEquals(actualResult, expectedResult, "Did not sufficiently move slider");
+	}
+	
+	@Test(priority=5)
+	public void canInputValues() {
+		float expectedValue = 6.55f;
+
+		float actualValue = new InputPageObject(driver)
+				.goToPage()
+				.inputValue(expectedValue)
+				.readValue();
+
+		Assert.assertEquals(actualValue, expectedValue, "Did not successfully input value");
 	}
 
 }
