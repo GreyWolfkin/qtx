@@ -19,9 +19,9 @@ public class CheckboxPageObject extends PageObjectSuperClass {
 		return this;
 	}
 	
-	public CheckboxPageObject clickOnBoxes(String firstPath, String secondPath) {
-		String pathToFirstBox = pathToForm + firstPath;
-		String pathToSecondBox = pathToForm + secondPath;
+	public CheckboxPageObject clickOnBoxes() {
+		String pathToFirstBox = pathToForm + "/input[1]";
+		String pathToSecondBox = pathToForm + "/input[2]";
 		checkbox1 = driver.findElement(By.xpath(pathToFirstBox));
 		checkbox2 = driver.findElement(By.xpath(pathToSecondBox));
 		checkbox1.click();

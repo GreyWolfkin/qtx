@@ -11,7 +11,7 @@ public class SliderPageTest extends TestSuperClass {
 		float actualSliderResult = new SliderPageObject(driver)
 				.goToPage()
 				.moveSlider()
-				.confirmResultValue();
+				.getResultValue();
 				
 		float expectedResult = 5;
 		

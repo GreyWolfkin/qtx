@@ -41,7 +41,7 @@ public class SliderPageObject extends PageObjectSuperClass {
 		return this;
 	}
 
-	public float confirmResultValue() {
+	public float getResultValue() {
 		return Float.parseFloat(range.getText());
 	}
 
