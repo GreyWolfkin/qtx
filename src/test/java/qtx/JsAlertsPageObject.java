@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class JsAlertsPageObject extends PageObjectSuperClass {
-	
+
 	protected WebElement alertButton;
 	protected WebElement confirmButton;
 	protected WebElement promptButton;
@@ -23,7 +23,7 @@ public class JsAlertsPageObject extends PageObjectSuperClass {
 		navigate("/javascript_alerts");
 		return this;
 	}
-	
+
 	public JsAlertsPageObject assignElements() {
 		List<WebElement> buttons = driver.findElements(By.tagName("button"));
 		for(WebElement button:buttons) {
@@ -45,7 +45,7 @@ public class JsAlertsPageObject extends PageObjectSuperClass {
 		result = driver.findElement(By.id("result"));
 		return this;
 	}
-	
+
 	public String[] performInstructions(String button, String instructions, String text) {
 		String alertText;
 		String resultText;
@@ -86,30 +86,30 @@ public class JsAlertsPageObject extends PageObjectSuperClass {
 		}
 		return new String[] {alertText, resultText};
 	}
-	
+
 	private void waitForAlert() {
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 		wait.until(ExpectedConditions.alertIsPresent());
 	}
-	
+
 	private String alertText() {
 		String text = driver.switchTo().alert().getText();
 		return text;
 	}
-	
+
 	private String resultText() {
 		String text = result.getText();
 		return text;
 	}
-	
+
 	private void acceptAlert() {
 		driver.switchTo().alert().accept();
 	}
-	
+
 	private void dismissAlert() {
 		driver.switchTo().alert().dismiss();
 	}
-	
+
 	private void sendTextToAlert(String text) {
 		driver.switchTo().alert().sendKeys(text);
 	}

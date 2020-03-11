@@ -5,20 +5,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class CheckboxPageObject extends PageObjectSuperClass {
-	
+
 	private WebElement checkbox1;
 	private WebElement checkbox2;
 	private String pathToForm = "//*[@id='checkboxes']";
-	
+
 	public CheckboxPageObject(WebDriver driverInstance) {
 		super(driverInstance);
 	}
-	
+
 	public CheckboxPageObject goToPage() {
 		navigate("/checkboxes");
 		return this;
 	}
-	
+
 	public CheckboxPageObject clickOnBoxes() {
 		String pathToFirstBox = pathToForm + "/input[1]";
 		String pathToSecondBox = pathToForm + "/input[2]";
@@ -28,7 +28,7 @@ public class CheckboxPageObject extends PageObjectSuperClass {
 		checkbox2.click();
 		return this;
 	}
-	
+
 	public boolean getResult() {
 		boolean box1Checked = false;
 		boolean box2Checked = false;
@@ -44,7 +44,7 @@ public class CheckboxPageObject extends PageObjectSuperClass {
 			return false;
 		}
 	}
-	
+
 	private boolean isAttributePresent(WebElement element, String attribute) {
 		String value = element.getAttribute(attribute);
 		if(value != null) {

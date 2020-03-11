@@ -5,13 +5,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class DropDownPageObject extends PageObjectSuperClass {
+public class DropdownPageObject extends PageObjectSuperClass {
 
-	public DropDownPageObject(WebDriver driverInstance) {
+	public DropdownPageObject(WebDriver driverInstance) {
 		super(driverInstance);
 	}
 
-	public DropDownPageObject setDropDownList(String value) {
+	public DropdownPageObject setDropDownList(String value) {
 		getDropDown().selectByVisibleText(value);
 		return this;
 	}
@@ -26,7 +26,7 @@ public class DropDownPageObject extends PageObjectSuperClass {
 		return customerDropDownList;
 	}
 
-	public DropDownPageObject goToPage() {
+	public DropdownPageObject goToPage() {
 		navigate("/dropdown");
 		return this;
 	}

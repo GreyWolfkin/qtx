@@ -22,13 +22,13 @@ public class JsAlertsPageTest extends TestSuperClass {
 	@Test(dataProvider="provider")
 	public void canHandleJavascriptAlerts(String button, String instructions, String text, String expectedAlertText, String expectedResultText) {
 		String[] results = new JsAlertsPageObject(driver)
-		.goToPage()
-		.assignElements()
-		.performInstructions(button, instructions, text);
-		
+				.goToPage()
+				.assignElements()
+				.performInstructions(button, instructions, text);
+
 		String actualAlertText = results[0];
 		String actualResultText = results[1];
-		
+
 		Assert.assertEquals(actualAlertText, expectedAlertText, "Unexpected Alert Text");
 		Assert.assertEquals(actualResultText, expectedResultText, "Unexpected Result Text");
 	}

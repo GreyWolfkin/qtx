@@ -29,14 +29,14 @@ public class SliderPageObject extends PageObjectSuperClass {
 	public SliderPageObject moveSlider() {
 		int widthOfElement = slider.getSize().getWidth();
 		int xOffset = (int)-0.5 * widthOfElement;
-		
+
 		Action clickAndDragSlider = builder
 				.moveToElement(slider, xOffset, 0)
 				.clickAndHold()
 				.moveByOffset(widthOfElement, 0)
 				.release()
 				.build();
-		
+
 		clickAndDragSlider.perform();
 		return this;
 	}
