@@ -1,85 +1,80 @@
 package moon;
 
-import java.time.Duration;
 import java.util.Random;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 
 public class AccountCreationObject extends PageObjectSuperClass {
 
-	protected FluentWait<WebDriver> wait;
-
 	@FindBy(className="login")
-	WebElement loginButton;
+	private WebElement loginButton;
+	
+	private String email;
+	private Random rand;
 
 	@FindBy(id="email_create")
-	WebElement createAccountEmailField;
+	private WebElement createAccountEmailField;
 
 	@FindBy(id="SubmitCreate")
-	WebElement createAccountButton;
+	private WebElement createAccountButton;
 
 	@FindBy(xpath="//*[@id='account-creation_form']/div[1]/h3")
-	WebElement personalInformationText;
+	private WebElement personalInformationText;
 
 	@FindBy(id="customer_firstname")
-	WebElement firstNameField;
+	private WebElement firstNameField;
 
 	@FindBy(id="customer_lastname")
-	WebElement lastNameField;
+	private WebElement lastNameField;
 
 	@FindBy(id="email")
-	WebElement emailField;
+	private WebElement emailField;
 
 	@FindBy(id="passwd")
-	WebElement passwordField;
+	private WebElement passwordField;
 
 	@FindBy(id="firstname")
-	WebElement firstNameAddressField;
+	private WebElement firstNameAddressField;
 
 	@FindBy(id="lastname")
-	WebElement lastNameAddressField;
+	private WebElement lastNameAddressField;
 
 	@FindBy(id="days")
-	WebElement days;
+	private WebElement days;
 
 	@FindBy(id="months")
-	WebElement months;
+	private WebElement months;
 
 	@FindBy(id="years")
-	WebElement years;
+	private WebElement years;
 
 	@FindBy(id="address1")
-	WebElement addressField;
+	private WebElement addressField;
 
 	@FindBy(id="city")
-	WebElement cityField;
+	private WebElement cityField;
 
 	@FindBy(id="id_state")
-	WebElement states;
+	private WebElement states;
 
 	@FindBy(id="postcode")
-	WebElement zipField;
+	private WebElement zipField;
 
 	@FindBy(id="phone_mobile")
-	WebElement phoneField;
+	private WebElement phoneField;
 
 	@FindBy(id="submitAccount")
-	WebElement registerButton;	
+	private WebElement registerButton;	
 
 	@FindBy(xpath="//*[@id='center_column']/h1")
-	WebElement myAccountText;
-
-	private String email;
+	private WebElement myAccountText;
 
 	public AccountCreationObject(WebDriver driverInstance) {
 		super(driverInstance);
-		wait = new FluentWait<WebDriver>(driver)
-				.withTimeout(Duration.ofSeconds(10))
-				.pollingEvery(Duration.ofMillis(100));
+		rand = new Random();
 	}
 
 	public AccountCreationObject goToPage() {
@@ -132,7 +127,6 @@ public class AccountCreationObject extends PageObjectSuperClass {
 	}
 
 	private void generateEmail() {
-		Random rand = new Random();
 		int randomNumber = rand.nextInt(89999) + 10000;
 		String randomEmailNumber = Integer.toString(randomNumber);
 		email = randomEmailNumber + "@gmail.com";
