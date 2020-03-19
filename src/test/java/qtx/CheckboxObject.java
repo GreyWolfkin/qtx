@@ -4,22 +4,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class CheckboxPageObject extends PageObjectSuperClass {
+public class CheckboxObject extends PageObjectSuperClass {
 
 	private WebElement checkbox1;
 	private WebElement checkbox2;
 	private String pathToForm = "//*[@id='checkboxes']";
 
-	public CheckboxPageObject(WebDriver driverInstance) {
+	public CheckboxObject(WebDriver driverInstance) {
 		super(driverInstance);
 	}
 
-	public CheckboxPageObject goToPage() {
+	public CheckboxObject goToPage() {
 		navigate("/checkboxes");
 		return this;
 	}
 
-	public CheckboxPageObject clickOnBoxes() {
+	public CheckboxObject clickOnBoxes() {
 		String pathToFirstBox = pathToForm + "/input[1]";
 		String pathToSecondBox = pathToForm + "/input[2]";
 		checkbox1 = driver.findElement(By.xpath(pathToFirstBox));

@@ -11,7 +11,7 @@ public class MasterTest extends TestSuperClass {
 		String username = "tomsmith";
 		String password = "SuperSecretPassword!";
 
-		String actualBannerText = new LoginPageObject(driver)
+		String actualBannerText = new LoginObject(driver)
 				.goToPage()
 				.login(username, password)
 				.getLoginConfirmationText();
@@ -24,7 +24,7 @@ public class MasterTest extends TestSuperClass {
 	@Test(priority=2)
 	public void canSelectFromDropdown() {
 		String expectedSelection = "Option 2";
-		String actualSelection = new DropdownPageObject(driver)
+		String actualSelection = new DropdownListObject(driver)
 				.goToPage()
 				.setDropDownList(expectedSelection)
 				.getDropDownListValue();
@@ -35,7 +35,7 @@ public class MasterTest extends TestSuperClass {
 	@Test(priority=3)
 	public void canCheckBoxes() {
 		boolean expectedResult = true;
-		boolean actualResult = new CheckboxPageObject(driver)
+		boolean actualResult = new CheckboxObject(driver)
 				.goToPage()
 				.clickOnBoxes()
 				.getResult();
@@ -45,7 +45,7 @@ public class MasterTest extends TestSuperClass {
 
 	@Test(priority=4)
 	public void canMoveSlider() {
-		float actualResult = new SliderPageObject(driver)
+		float actualResult = new SliderObject(driver)
 				.goToPage()
 				.moveSlider()
 				.getResultValue();
@@ -68,7 +68,7 @@ public class MasterTest extends TestSuperClass {
 	@Test(priority=5, dataProvider="inputValues")
 	public void canInputValues(float expectedValue) {
 
-		float actualValue = new InputPageObject(driver)
+		float actualValue = new InputObject(driver)
 				.goToPage()
 				.inputValue(expectedValue)
 				.readValue();
@@ -91,7 +91,7 @@ public class MasterTest extends TestSuperClass {
 
 	@Test(priority=6, dataProvider="jsProvider")
 	public void canHandleJavascriptAlerts(String button, String instructions, String text, String expectedAlertText, String expectedResultText) {
-		String[] results = new JsAlertsPageObject(driver)
+		String[] results = new JsAlertsObject(driver)
 				.goToPage()
 				.assignElements()
 				.performInstructions(button, instructions, text);

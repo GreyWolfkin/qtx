@@ -10,28 +10,30 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class JqueryMenuPage extends PageObjectSuperClass {
-	
+public class JqueryMenuObject extends PageObjectSuperClass {
+
 	private String fileName;
 	private String downloadPath;
-	
-	public JqueryMenuPage(WebDriver driverInstance, String downloadPath) {
+
+	public JqueryMenuObject(WebDriver driverInstance, String downloadPath) {
 		super(driverInstance);
 		this.downloadPath = downloadPath;
-		Path path = Paths.get(downloadPath + "menu.xls");
+		Path path1 = Paths.get(downloadPath + "menu.xls");
+		Path path2 = Paths.get(downloadPath + "menu.xls.crdownload");
 		try {
-			Files.deleteIfExists(path);
+			Files.deleteIfExists(path1);
+			Files.deleteIfExists(path2);
 		} catch(IOException ex) {
 			System.out.println(ex);
 		}
 	}
-	
-	public JqueryMenuPage goToPage() {
+
+	public JqueryMenuObject goToPage() {
 		navigate("/jqueryui/menu");
 		return this;
 	}
-	
-	public JqueryMenuPage clickItemByMenuPath(String[] path) {
+
+	public JqueryMenuObject clickItemByMenuPath(String[] path) {
 		for(String string:path) {
 			WebElement item = driver.findElement(By.xpath("//*[@class='ui-menu-item']//*[text()='" + string + "']"));
 			if(item.getAttribute("href").contains("/download/")) {

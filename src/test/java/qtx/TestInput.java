@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class InputPageTest extends TestSuperClass {
+public class TestInput extends TestSuperClass {
 	@DataProvider(name="inputValues")
 	public Object[] values() {
 		return new Object[] {
@@ -19,7 +19,7 @@ public class InputPageTest extends TestSuperClass {
 	@Test(priority=5, dataProvider="inputValues")
 	public void canInputValues(float expectedValue) {
 
-		float actualValue = new InputPageObject(driver)
+		float actualValue = new InputObject(driver)
 				.goToPage()
 				.inputValue(expectedValue)
 				.readValue();

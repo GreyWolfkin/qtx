@@ -3,12 +3,12 @@ package qtx;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class DropdownListTest extends TestSuperClass {
+public class TestDropdownList extends TestSuperClass {
 
 	@Test
 	public void canSelectFromDropDown() {
 		String expectedSelection = "Option 2";
-		String actualSelection = new DropdownPageObject(driver)
+		String actualSelection = new DropdownListObject(driver)
 				.goToPage()
 				.setDropDownList(expectedSelection)
 				.getDropDownListValue();

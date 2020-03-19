@@ -8,23 +8,23 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class JsAlertsPageObject extends PageObjectSuperClass {
+public class JsAlertsObject extends PageObjectSuperClass {
 
 	protected WebElement alertButton;
 	protected WebElement confirmButton;
 	protected WebElement promptButton;
 	protected WebElement result;
 
-	public JsAlertsPageObject(WebDriver driverInstance) {
+	public JsAlertsObject(WebDriver driverInstance) {
 		super(driverInstance);
 	}
 
-	public JsAlertsPageObject goToPage() {
+	public JsAlertsObject goToPage() {
 		navigate("/javascript_alerts");
 		return this;
 	}
 
-	public JsAlertsPageObject assignElements() {
+	public JsAlertsObject assignElements() {
 		List<WebElement> buttons = driver.findElements(By.tagName("button"));
 		for(WebElement button:buttons) {
 			String onclick = button.getAttribute("onclick");

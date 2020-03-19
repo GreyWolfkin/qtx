@@ -4,13 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPageObject extends PageObjectSuperClass {
+public class LoginObject extends PageObjectSuperClass {
 
-	public LoginPageObject(WebDriver driverInstance) {
+	public LoginObject(WebDriver driverInstance) {
 		super(driverInstance);
 	}
 
-	public LoginPageObject goToPage() {
+	public LoginObject goToPage() {
 		navigate("/login");
 		return this;
 	}
