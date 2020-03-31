@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class JsAlertsPageTest extends TestSuperClass {
+public class TestJsAlerts extends TestSuperClass {
 
 	@DataProvider(name="provider")
 	public Object[][] sendData() { 
@@ -21,7 +21,7 @@ public class JsAlertsPageTest extends TestSuperClass {
 
 	@Test(dataProvider="provider")
 	public void canHandleJavascriptAlerts(String button, String instructions, String text, String expectedAlertText, String expectedResultText) {
-		String[] results = new JsAlertsPageObject(driver)
+		String[] results = new JsAlertsObject(driver)
 				.goToPage()
 				.assignElements()
 				.performInstructions(button, instructions, text);

@@ -6,24 +6,24 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class InputPageObject extends PageObjectSuperClass {
+public class InputObject extends PageObjectSuperClass {
 
 	@FindBy(tagName="input")
 	WebElement numberField;
 
 	protected WebDriverWait wait;
 
-	public InputPageObject(WebDriver driverInstance) {
+	public InputObject(WebDriver driverInstance) {
 		super(driverInstance);
 		wait = new WebDriverWait(driver, 5);
 	}
 
-	public InputPageObject goToPage() {
+	public InputObject goToPage() {
 		navigate("/inputs");
 		return this;
 	}
 
-	public InputPageObject inputValue(float value) {
+	public InputObject inputValue(float value) {
 		String input = Float.toString(value);
 		numberField.sendKeys(input);
 		wait.until(ExpectedConditions.attributeContains(numberField, "value", input));
