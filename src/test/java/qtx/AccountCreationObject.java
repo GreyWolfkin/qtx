@@ -1,4 +1,4 @@
-package moon;
+package qtx;
 
 import java.util.Random;
 
@@ -78,7 +78,7 @@ public class AccountCreationObject extends PageObjectSuperClass {
 	}
 
 	public AccountCreationObject goToPage() {
-		navigate();
+		navigate("");
 		return this;
 	}
 

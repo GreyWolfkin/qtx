@@ -1,4 +1,4 @@
-package moon;
+package qtx;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
