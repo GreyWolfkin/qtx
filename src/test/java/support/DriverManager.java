@@ -1,4 +1,4 @@
-package qtx;
+package support;
 
 import org.openqa.selenium.WebDriver;
 
